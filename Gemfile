@@ -43,6 +43,7 @@ end
 
 group :test, :development do
   gem 'awesome_print'
+  gem 'brakeman', '4.3.1'
   gem 'gem-release'
   gem 'redis'
   gem 'rubocop', '~> 1.22.3', require: false # bumped
