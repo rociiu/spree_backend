@@ -8,8 +8,8 @@ module Spree
       respond_to :html
 
       def create
-        provider = @providers.map(&:to_s).find { |provider| provider == params[:payment_method][:type] }
-        @payment_method = provider.constantize.new(payment_method_params)
+        provider_name = @providers.map(&:to_s).find { |provider| provider == params[:payment_method][:type] }
+        @payment_method = provider_name.constantize.new(payment_method_params)
         @object = @payment_method
         set_current_store
         invoke_callbacks(:create, :before)
